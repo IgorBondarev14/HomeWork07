@@ -16,19 +16,12 @@ for (int i = 0; i < m; i++)
     }
     Console.WriteLine();
 }
-Console.Write("Введите искомое число: ");
+Console.Write("Введите номер строки: ");
 int x = Convert.ToInt32(Console.ReadLine());
-int count = 0;
-for (int i = 0; i < m; i++)
-{
-    for (int j = 0; j < n; j++)
-    {
-        if (x == array[i, j])
-        {
-            Console.WriteLine(array[i, j]);
-            count++;
-        }
-    }
-}
-if (count == 0)
-    Console.WriteLine("Такого числа нет в данном массиве.");
+Console.Write("Введите номер столбца: ");
+int y = Convert.ToInt32(Console.ReadLine());
+
+if (x > m || y > n || x < 0 || y< 0)
+    Console.WriteLine("Такого элемента нет в данном массиве.");
+else
+    Console.WriteLine(array[x - 1, y - 1]);
